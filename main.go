@@ -1,7 +1,7 @@
 package main
 
 import (
-	"printlove-go/handler"
+	"github.com/miaogaolin/printlove-go/handler"
 
 	"github.com/gin-gonic/gin"
 )
