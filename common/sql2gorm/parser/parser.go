@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"bytes"
 	"fmt"
 	"go/format"
 	"io"
@@ -8,6 +9,8 @@ import (
 	"strings"
 	"sync"
 	"text/template"
+
+	"github.com/miaogaolin/printlove-go/common/sql2gorm/tpl"
 
 	"github.com/iancoleman/strcase"
 	"github.com/jinzhu/inflection"
@@ -30,15 +33,16 @@ type ModelCodes struct {
 	Package    string
 	ImportPath []string
 	StructCode []string
+	AllCode    string
 }
 
-func ParseSql(sql string, options ...Option) (ModelCodes, error) {
+func ParseSql(sql string, options ...Option) (string, error) {
 	initTemplate()
 	opt := parseOption(options)
 
 	stmts, err := parser.New().Parse(sql, opt.Charset, opt.Collation)
 	if err != nil {
-		return ModelCodes{}, err
+		return "", err
 	}
 	tableStr := make([]string, 0, len(stmts))
 	importPath := make(map[string]struct{})
@@ -46,7 +50,7 @@ func ParseSql(sql string, options ...Option) (ModelCodes, error) {
 		if ct, ok := stmt.(*ast.CreateTableStmt); ok {
 			s, ipt, err := makeCode(ct, opt)
 			if err != nil {
-				return ModelCodes{}, err
+				return "", err
 			}
 			tableStr = append(tableStr, s)
 			for _, s := range ipt {
@@ -59,11 +63,21 @@ func ParseSql(sql string, options ...Option) (ModelCodes, error) {
 		importPathArr = append(importPathArr, s)
 	}
 	sort.Strings(importPathArr)
-	return ModelCodes{
-		Package:    opt.Package,
-		ImportPath: importPathArr,
-		StructCode: tableStr,
-	}, nil
+	t, err := template.New("tpl").Parse(tpl.ModelTpl)
+	if err != nil {
+		return "", err
+	}
+	var b bytes.Buffer
+	err = t.Execute(&b, map[string]interface{}{
+		"package": opt.Package,
+		"imports": importPathArr,
+		"struct":  tableStr,
+	})
+	if err != nil {
+		return "", err
+	}
+	res, err := format.Source(b.Bytes())
+	return string(res), err
 }
 
 func ParseSqlToWrite(sql string, writer io.Writer, options ...Option) error {
