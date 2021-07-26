@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"printlove-go/response"
+	"github.com/miaogaolin/printlove-go/response"
 
-	"printlove-go/common/sql2gorm/parser"
+	"github.com/miaogaolin/printlove-go/common/sql2gorm/parser"
 
 	"github.com/gin-gonic/gin"
 )

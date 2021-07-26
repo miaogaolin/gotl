@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/miaogaolin/printlove-go/common/sqltogozero/gen"
+	"github.com/miaogaolin/printlove-go/common/sql2gozero/gen"
 	"github.com/miaogaolin/printlove-go/response"
 	"github.com/tal-tech/go-zero/tools/goctl/config"
 )
