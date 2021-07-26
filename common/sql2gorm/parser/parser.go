@@ -79,9 +79,9 @@ func ParseSqlToWrite(sql string, writer io.Writer, options ...Option) error {
 	return nil
 }
 
-func ParseSqlFormat(sql string) ([]byte, error) {
+func ParseSqlFormat(sql string, options ...Option) ([]byte, error) {
 	w := strings.Builder{}
-	err := ParseSqlToWrite(sql, &w)
+	err := ParseSqlToWrite(sql, &w, options...)
 	if err != nil {
 		return nil, err
 	}
