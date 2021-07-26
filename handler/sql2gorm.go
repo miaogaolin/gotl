@@ -10,10 +10,10 @@ import (
 
 func SqlToGorm(c *gin.Context) {
 	ddl := c.PostForm("ddl")
-	res, err := parser.ParseSql(ddl)
+	res, err := parser.ParseSqlFormat(ddl)
 	if err != nil {
 		response.Error(c, err)
 		return
 	}
-	response.Success(c, res)
+	response.Success(c, string(res))
 }

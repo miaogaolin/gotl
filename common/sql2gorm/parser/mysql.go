@@ -30,10 +30,10 @@ func GetCreateTableFromDB(dsn, tableName string) (string, error) {
 	return createSql, nil
 }
 
-func ParseSqlFromDB(dsn, tableName string, options ...Option) (string, error) {
+func ParseSqlFromDB(dsn, tableName string, options ...Option) (*ModelCodes, error) {
 	createSql, err := GetCreateTableFromDB(dsn, tableName)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	return ParseSql(createSql, options...)
 }
