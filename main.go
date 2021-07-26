@@ -9,6 +9,5 @@ import (
 func main() {
 	r := gin.New()
 	handler.Route(r)
-	r.Run(":8080")
-
+	Server(r, ":8080")
 }
