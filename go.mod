@@ -20,6 +20,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0
 	github.com/knocknote/vitess-sqlparser v0.0.0-20200129061755-eb7ce11aa4dd
 	github.com/logrusorgru/aurora v2.0.3+incompatible
+	github.com/miaogaolin/sql2ent v0.0.0-20210730070534-050e20f198e3
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
 	github.com/tal-tech/go-zero v1.1.8
