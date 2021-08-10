@@ -25,4 +25,5 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/tal-tech/go-zero v1.1.8
 	github.com/urfave/cli v1.22.5
+	gopkg.in/yaml.v2 v2.4.0
 )

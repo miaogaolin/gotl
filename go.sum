@@ -186,12 +186,8 @@ github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Ky
 github.com/mattn/go-runewidth v0.0.9/go.mod h1:H031xJmbD/WCDINGzjvQ9THkh0rPKHF+m2gUSrubnMI=
 github.com/mattn/go-sqlite3 v1.9.0/go.mod h1:FPy6KqzDD04eiIsT53CuJW3U88zkxoIYsOqkbpncsNc=
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
-github.com/miaogaolin/ddlparser v0.0.0-20210730061232-b2cbd985d13a h1:8A44vCYL29vMJKstTNwaqIkxhzEIsLniB8vsgAxhqAg=
-github.com/miaogaolin/ddlparser v0.0.0-20210730061232-b2cbd985d13a/go.mod h1:Q7mjo2PQnxBxTJiH3O2/fHgb59GTuP2q7l+LHAyU+74=
 github.com/miaogaolin/ddlparser v0.0.0-20210730064734-6bf058b5debf h1:yIqZISMvy6CDS6T0DaAHCinLHMJS9D46hNyfdJtplec=
 github.com/miaogaolin/ddlparser v0.0.0-20210730064734-6bf058b5debf/go.mod h1:Q7mjo2PQnxBxTJiH3O2/fHgb59GTuP2q7l+LHAyU+74=
-github.com/miaogaolin/sql2ent v0.0.0-20210730062016-d8003125a3b5 h1:EEFMXEukClYkedkLkISbvJ4/FnQURh1AX59kSnllatA=
-github.com/miaogaolin/sql2ent v0.0.0-20210730062016-d8003125a3b5/go.mod h1:IfsI0W9wgYtR9R1GRAvqxXylVeRDlSNTX0HUKphVgy8=
 github.com/miaogaolin/sql2ent v0.0.0-20210730070534-050e20f198e3 h1:sdjw+7ny4MRb3edkSqRG8YrfMYeoYpUZirUq18jgjT4=
 github.com/miaogaolin/sql2ent v0.0.0-20210730070534-050e20f198e3/go.mod h1:YY5xZpNor/t84vRpL48JCxMH1iFRx3JuM9qmIfP+tu4=
 github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
