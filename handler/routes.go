@@ -8,5 +8,6 @@ func Route(r *gin.Engine) {
 	r.POST("/sql2gozero", SqlToGoZero)
 	r.POST("sql2ent", SqlToEnt)
 	r.POST("yaml2go", YamlToGo)
+	r.POST("xml2json", XmlToJson)
 
 }
