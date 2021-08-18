@@ -6,6 +6,7 @@ require (
 	github.com/DATA-DOG/go-sqlmock v1.4.1
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20210716071054-a231a1a7f1cc
 	github.com/basgys/goxml2json v1.1.1-0.20181031222924-996d9fc8d313 // indirect
+	github.com/cch123/elasticsql v1.0.1 // indirect
 	github.com/facebookgo/clock v0.0.0-20150410010913-600d898af40a // indirect
 	github.com/facebookgo/ensure v0.0.0-20200202191622-63f1cf65ac4c // indirect
 	github.com/facebookgo/freeport v0.0.0-20150612182905-d4adf43b75b9 // indirect
