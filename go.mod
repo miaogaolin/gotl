@@ -5,8 +5,9 @@ go 1.16
 require (
 	github.com/DATA-DOG/go-sqlmock v1.4.1
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20210716071054-a231a1a7f1cc
-	github.com/basgys/goxml2json v1.1.1-0.20181031222924-996d9fc8d313 // indirect
-	github.com/cch123/elasticsql v1.0.1 // indirect
+	github.com/basgys/goxml2json v1.1.1-0.20181031222924-996d9fc8d313
+	github.com/bitly/go-simplejson v0.5.0 // indirect
+	github.com/cch123/elasticsql v1.0.1
 	github.com/facebookgo/clock v0.0.0-20150410010913-600d898af40a // indirect
 	github.com/facebookgo/ensure v0.0.0-20200202191622-63f1cf65ac4c // indirect
 	github.com/facebookgo/freeport v0.0.0-20150612182905-d4adf43b75b9 // indirect
@@ -22,7 +23,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0
 	github.com/knocknote/vitess-sqlparser v0.0.0-20200129061755-eb7ce11aa4dd
 	github.com/logrusorgru/aurora v2.0.3+incompatible
-	github.com/miaogaolin/sql2ent v0.0.0-20210730070534-050e20f198e3
+	github.com/miaogaolin/sql2ent v0.0.0-20210918040822-24e64c0ebc9c
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
 	github.com/tal-tech/go-zero v1.1.8

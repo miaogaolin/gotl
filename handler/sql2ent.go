@@ -3,7 +3,7 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/miaogaolin/printlove-go/response"
-	"github.com/miaogaolin/sql2ent"
+	sql2ent "github.com/miaogaolin/sql2ent/parser"
 )
 
 func SqlToEnt(c *gin.Context) {
