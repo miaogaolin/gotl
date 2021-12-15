@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/model"
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/util"
+	"github.com/miaogaolin/gotl/common/sql2gozero/model"
+	"github.com/miaogaolin/gotl/common/sql2gozero/util"
 	"github.com/stretchr/testify/assert"
 )
 

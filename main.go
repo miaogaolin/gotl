@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/miaogaolin/printlove-go/handler"
+	"github.com/miaogaolin/gotl/handler"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,4 +1,4 @@
-module github.com/miaogaolin/printlove-go
+module github.com/miaogaolin/gotl
 
 go 1.16
 

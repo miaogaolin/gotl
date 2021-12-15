@@ -4,7 +4,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/parser"
+	"github.com/miaogaolin/gotl/common/sql2gozero/parser"
 	"github.com/stretchr/testify/assert"
 	"github.com/tal-tech/go-zero/tools/goctl/util/stringx"
 )

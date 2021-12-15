@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/miaogaolin/printlove-go/common/ddl-parser/parser"
+	"github.com/miaogaolin/gotl/common/ddl-parser/parser"
 	"github.com/tal-tech/go-zero/core/collection"
 	"github.com/tal-tech/go-zero/tools/goctl/util/stringx"
 )

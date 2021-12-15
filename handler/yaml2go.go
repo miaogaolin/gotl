@@ -2,8 +2,8 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/miaogaolin/printlove-go/common/yaml2go"
-	"github.com/miaogaolin/printlove-go/response"
+	"github.com/miaogaolin/gotl/common/yaml2go"
+	"github.com/miaogaolin/gotl/response"
 )
 
 func YamlToGo(c *gin.Context) {

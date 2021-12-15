@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/miaogaolin/printlove-go/response"
+	"github.com/miaogaolin/gotl/response"
 	sql2ent "github.com/miaogaolin/sql2ent/parser"
 )
 

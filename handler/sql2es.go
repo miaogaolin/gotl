@@ -3,7 +3,7 @@ package handler
 import (
 	"github.com/cch123/elasticsql"
 	"github.com/gin-gonic/gin"
-	"github.com/miaogaolin/printlove-go/response"
+	"github.com/miaogaolin/gotl/response"
 )
 
 func SqlToEs(c *gin.Context) {

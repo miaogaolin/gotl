@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/util"
+	"github.com/miaogaolin/gotl/common/sql2gozero/util"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
 )
 

@@ -1,7 +1,7 @@
 package gen
 
 import (
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/parser"
+	"github.com/miaogaolin/gotl/common/sql2gozero/parser"
 	"github.com/tal-tech/go-zero/tools/goctl/config"
 )
 

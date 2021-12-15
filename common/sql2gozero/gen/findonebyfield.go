@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/template"
+	"github.com/miaogaolin/gotl/common/sql2gozero/template"
 	"github.com/tal-tech/go-zero/tools/goctl/util"
 	"github.com/tal-tech/go-zero/tools/goctl/util/stringx"
 )

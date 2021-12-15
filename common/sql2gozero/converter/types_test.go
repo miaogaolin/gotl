@@ -3,8 +3,8 @@ package converter
 import (
 	"testing"
 
+	"github.com/miaogaolin/gotl/common/ddl-parser/parser"
 	"github.com/stretchr/testify/assert"
-	"github.com/miaogaolin/printlove-go/common/ddl-parser/parser"
 )
 
 func TestConvertDataType(t *testing.T) {

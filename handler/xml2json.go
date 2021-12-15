@@ -5,7 +5,7 @@ import (
 
 	"github.com/basgys/goxml2json"
 	"github.com/gin-gonic/gin"
-	"github.com/miaogaolin/printlove-go/response"
+	"github.com/miaogaolin/gotl/response"
 )
 
 func XmlToJson(c *gin.Context) {

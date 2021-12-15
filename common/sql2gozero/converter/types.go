@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/miaogaolin/printlove-go/common/ddl-parser/parser"
+	"github.com/miaogaolin/gotl/common/ddl-parser/parser"
 )
 
 var commonMysqlDataTypeMap = map[int]string{

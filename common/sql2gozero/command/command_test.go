@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/gen"
+	"github.com/miaogaolin/gotl/common/sql2gozero/gen"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/tal-tech/go-zero/tools/goctl/config"

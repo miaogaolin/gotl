@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/builderx"
+	"github.com/miaogaolin/gotl/common/sql2gozero/builderx"
 	"github.com/stretchr/testify/assert"
 	"github.com/tal-tech/go-zero/core/logx"
 	"github.com/tal-tech/go-zero/core/stringx"

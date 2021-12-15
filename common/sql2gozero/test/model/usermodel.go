@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/builderx"
+	"github.com/miaogaolin/gotl/common/sql2gozero/builderx"
 	"github.com/tal-tech/go-zero/core/stores/sqlc"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"github.com/tal-tech/go-zero/core/stringx"

@@ -12,7 +12,7 @@ var (
 	"github.com/tal-tech/go-zero/core/stores/sqlc"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"github.com/tal-tech/go-zero/core/stringx"
-	"github.com/miaogaolin/printlove-go/common/sqltogozero/builderx"
+	"github.com/miaogaolin/gotl/common/sqltogozero/builderx"
 )
 `
 	// ImportsNoCache defines a import template for model in normal case
@@ -25,7 +25,7 @@ var (
 	"github.com/tal-tech/go-zero/core/stores/sqlc"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"github.com/tal-tech/go-zero/core/stringx"
-	"github.com/miaogaolin/printlove-go/common/sqltogozero/builderx"
+	"github.com/miaogaolin/gotl/common/sqltogozero/builderx"
 )
 `
 )

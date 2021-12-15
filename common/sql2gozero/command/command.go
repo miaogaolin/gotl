@@ -6,9 +6,9 @@ import (
 	"strings"
 
 	"github.com/go-sql-driver/mysql"
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/gen"
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/model"
-	"github.com/miaogaolin/printlove-go/common/sql2gozero/util"
+	"github.com/miaogaolin/gotl/common/sql2gozero/gen"
+	"github.com/miaogaolin/gotl/common/sql2gozero/model"
+	"github.com/miaogaolin/gotl/common/sql2gozero/util"
 	"github.com/tal-tech/go-zero/core/logx"
 	"github.com/tal-tech/go-zero/core/stores/postgres"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
