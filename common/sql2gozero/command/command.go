@@ -6,15 +6,17 @@ import (
 	"strings"
 
 	"github.com/go-sql-driver/mysql"
+	"github.com/urfave/cli"
+	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/stores/postgres"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
+	"github.com/zeromicro/go-zero/tools/goctl/config"
 	"github.com/miaogaolin/gotl/common/sql2gozero/gen"
 	"github.com/miaogaolin/gotl/common/sql2gozero/model"
 	"github.com/miaogaolin/gotl/common/sql2gozero/util"
-	"github.com/tal-tech/go-zero/core/logx"
-	"github.com/tal-tech/go-zero/core/stores/postgres"
-	"github.com/tal-tech/go-zero/core/stores/sqlx"
-	"github.com/tal-tech/go-zero/tools/goctl/config"
-	"github.com/tal-tech/go-zero/tools/goctl/util/console"
-	"github.com/urfave/cli"
+	file "github.com/zeromicro/go-zero/tools/goctl/util"
+	"github.com/zeromicro/go-zero/tools/goctl/util/console"
+	"github.com/zeromicro/go-zero/tools/goctl/util/pathx"
 )
 
 const (
@@ -27,6 +29,7 @@ const (
 	flagStyle    = "style"
 	flagDatabase = "database"
 	flagSchema   = "schema"
+	flagHome     = "home"
 )
 
 var errNotMatched = errors.New("sql not matched")
@@ -39,12 +42,23 @@ func MysqlDDL(ctx *cli.Context) error {
 	idea := ctx.Bool(flagIdea)
 	style := ctx.String(flagStyle)
 	database := ctx.String(flagDatabase)
+	home := ctx.String(flagHome)
+	remote := ctx.String("remote")
+	if len(remote) > 0 {
+		repo, _ := file.CloneIntoGitHome(remote)
+		if len(repo) > 0 {
+			home = repo
+		}
+	}
+	if len(home) > 0 {
+		pathx.RegisterGoctlHome(home)
+	}
 	cfg, err := config.NewConfig(style)
 	if err != nil {
 		return err
 	}
 
-	return fromDDl(src, dir, cfg, cache, idea, database)
+	return fromDDL(src, dir, cfg, cache, idea, database)
 }
 
 // MySqlDataSource generates model code from datasource
@@ -54,6 +68,18 @@ func MySqlDataSource(ctx *cli.Context) error {
 	cache := ctx.Bool(flagCache)
 	idea := ctx.Bool(flagIdea)
 	style := ctx.String(flagStyle)
+	home := ctx.String("home")
+	remote := ctx.String("remote")
+	if len(remote) > 0 {
+		repo, _ := file.CloneIntoGitHome(remote)
+		if len(repo) > 0 {
+			home = repo
+		}
+	}
+	if len(home) > 0 {
+		pathx.RegisterGoctlHome(home)
+	}
+
 	pattern := strings.TrimSpace(ctx.String(flagTable))
 	cfg, err := config.NewConfig(style)
 	if err != nil {
@@ -71,6 +97,18 @@ func PostgreSqlDataSource(ctx *cli.Context) error {
 	idea := ctx.Bool(flagIdea)
 	style := ctx.String(flagStyle)
 	schema := ctx.String(flagSchema)
+	home := ctx.String("home")
+	remote := ctx.String("remote")
+	if len(remote) > 0 {
+		repo, _ := file.CloneIntoGitHome(remote)
+		if len(repo) > 0 {
+			home = repo
+		}
+	}
+	if len(home) > 0 {
+		pathx.RegisterGoctlHome(home)
+	}
+
 	if len(schema) == 0 {
 		schema = "public"
 	}
@@ -84,7 +122,7 @@ func PostgreSqlDataSource(ctx *cli.Context) error {
 	return fromPostgreSqlDataSource(url, pattern, dir, schema, cfg, cache, idea)
 }
 
-func fromDDl(src, dir string, cfg *config.Config, cache, idea bool, database string) error {
+func fromDDL(src, dir string, cfg *config.Config, cache, idea bool, database string) error {
 	log := console.NewConsole(idea)
 	src = strings.TrimSpace(src)
 	if len(src) == 0 {
@@ -181,7 +219,7 @@ func fromMysqlDataSource(url, pattern, dir string, cfg *config.Config, cache, id
 func fromPostgreSqlDataSource(url, pattern, dir, schema string, cfg *config.Config, cache, idea bool) error {
 	log := console.NewConsole(idea)
 	if len(url) == 0 {
-		log.Error("%v", "expected data source of mysql, but nothing found")
+		log.Error("%v", "expected data source of postgresql, but nothing found")
 		return nil
 	}
 

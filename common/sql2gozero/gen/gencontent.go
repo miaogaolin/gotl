@@ -2,7 +2,7 @@ package gen
 
 import (
 	"github.com/miaogaolin/gotl/common/sql2gozero/parser"
-	"github.com/tal-tech/go-zero/tools/goctl/config"
+	"github.com/zeromicro/go-zero/tools/goctl/config"
 )
 
 // NewDefaultGenerator creates an instance for defaultGenerator

@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/miaogaolin/gotl/common/sql2gozero/gen"
 	"github.com/miaogaolin/gotl/response"
-	"github.com/tal-tech/go-zero/tools/goctl/config"
+	"github.com/zeromicro/go-zero/tools/goctl/config"
 )
 
 func SqlToGoZero(c *gin.Context) {

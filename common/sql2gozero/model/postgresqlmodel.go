@@ -4,19 +4,18 @@ import (
 	"database/sql"
 	"strings"
 
-	"github.com/tal-tech/go-zero/core/stores/sqlx"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
 )
 
-var (
-	p2m = map[string]string{
-		"int8":    "bigint",
-		"numeric": "bigint",
-		"float8":  "double",
-		"float4":  "float",
-		"int2":    "smallint",
-		"int4":    "integer",
-	}
-)
+var p2m = map[string]string{
+	"int8":        "bigint",
+	"numeric":     "bigint",
+	"float8":      "double",
+	"float4":      "float",
+	"int2":        "smallint",
+	"int4":        "integer",
+	"timestamptz": "timestamp",
+}
 
 // PostgreSqlModel gets table information from information_schema、pg_catalog
 type PostgreSqlModel struct {
@@ -109,6 +108,7 @@ func (m *PostgreSqlModel) getColumns(schema, table string, in []*PostgreColumn) 
 	if err != nil {
 		return nil, err
 	}
+
 	var list []*Column
 	for _, e := range in {
 		var dft interface{}
@@ -121,9 +121,15 @@ func (m *PostgreSqlModel) getColumns(schema, table string, in []*PostgreColumn) 
 			isNullAble = "NO"
 		}
 
-		extra := "auto_increment"
-		if e.IdentityIncrement.Int32 != 1 {
-			extra = ""
+		var extra string
+		// when identity is true, the column is auto increment
+		if e.IdentityIncrement.Int32 == 1 {
+			extra = "auto_increment"
+		}
+
+		// when type is serial, it's auto_increment. and the default value is tablename_columnname_seq
+		if strings.Contains(e.ColumnDefault.String, table+"_"+e.Field.String+"_seq") {
+			extra = "auto_increment"
 		}
 
 		if len(index[e.Field.String]) > 0 {
@@ -173,7 +179,8 @@ func (m *PostgreSqlModel) getIndex(schema, table string) (map[string][]*DbIndex,
 	if err != nil {
 		return nil, err
 	}
-	var index = make(map[string][]*DbIndex)
+
+	index := make(map[string][]*DbIndex)
 	for _, e := range indexes {
 		if e.IsPrimary.Bool {
 			index[e.ColumnName.String] = append(index[e.ColumnName.String], &DbIndex{
@@ -194,6 +201,7 @@ func (m *PostgreSqlModel) getIndex(schema, table string) (map[string][]*DbIndex,
 			SeqInIndex: int(e.IndexSort.Int32),
 		})
 	}
+
 	return index, nil
 }
 
