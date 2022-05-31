@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/miaogaolin/gotl/common/ddl-parser/parser"
-	"github.com/tal-tech/go-zero/core/collection"
-	"github.com/tal-tech/go-zero/tools/goctl/util/stringx"
+	"github.com/zeromicro/go-zero/core/collection"
+	"github.com/zeromicro/go-zero/tools/goctl/util/stringx"
 )
 
 // Parse parses ddl into golang structure
