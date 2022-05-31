@@ -186,7 +186,10 @@ func makeCode(stmt *ast.CreateTableStmt, opt options) (string, []string, error) 
 			case ast.ColumnOptionOnUpdate: // For Timestamp and Datetime only.
 			case ast.ColumnOptionFulltext:
 			case ast.ColumnOptionComment:
-				field.Comment = o.Expr.GetDatum().GetString()
+				comment := o.Expr.GetDatum().GetString()
+				if comment != "" {
+					gormTag.WriteString(";comment:" + comment)
+				}
 			default:
 				//return "", nil, errors.Errorf(" unsupport option %d\n", o.Tp)
 			}
